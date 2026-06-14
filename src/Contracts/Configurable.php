@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NunoMaduro\Essentials\Contracts;
+namespace Grnspc\Essentials\Contracts;
 
 /**
  * @internal

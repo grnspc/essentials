@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use NunoMaduro\Essentials\EssentialsServiceProvider;
+use Grnspc\Essentials\EssentialsServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace NunoMaduro\Essentials;
+namespace Grnspc\Essentials;
 
+use Grnspc\Essentials\Contracts\Configurable;
 use Illuminate\Console\Command;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use NunoMaduro\Essentials\Contracts\Configurable;
 
 /**
  * @internal

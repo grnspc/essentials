@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Carbon\Carbon;
+use Grnspc\Essentials\Configurables\ImmutableDates;
 use Illuminate\Support\Facades\Date;
-use NunoMaduro\Essentials\Configurables\ImmutableDates;
 
 beforeEach(function (): void {
     Date::use(Carbon::class);

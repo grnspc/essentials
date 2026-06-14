@@ -16,7 +16,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\AggressivePrefetching::class => true,
+    Grnspc\Essentials\Configurables\AggressivePrefetching::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -27,13 +27,13 @@ return [
     | for your models. It reduces N+1 query issues and improves
     | performance without needing with() everywhere.
     |
-    | Enabled by default.
+    | Disabled by default.
     |
     | Note: This option is only available in Laravel 12.8 and above.
     |
     */
 
-    NunoMaduro\Essentials\Configurables\AutomaticallyEagerLoadRelationships::class => true,
+    Grnspc\Essentials\Configurables\AutomaticallyEagerLoadRelationships::class => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\FakeSleep::class => true,
+    Grnspc\Essentials\Configurables\FakeSleep::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -62,7 +62,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\ForceScheme::class => true,
+    Grnspc\Essentials\Configurables\ForceScheme::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -74,7 +74,7 @@ return [
     */
 
     'environments' => [
-        NunoMaduro\Essentials\Configurables\ForceScheme::class => ['production'],
+        Grnspc\Essentials\Configurables\ForceScheme::class => ['production'],
     ],
 
     /*
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\ImmutableDates::class => true,
+    Grnspc\Essentials\Configurables\ImmutableDates::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -105,7 +105,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\PreventStrayRequests::class => true,
+    Grnspc\Essentials\Configurables\PreventStrayRequests::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -121,7 +121,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\ProhibitDestructiveCommands::class => true,
+    Grnspc\Essentials\Configurables\ProhibitDestructiveCommands::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -136,7 +136,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\SetDefaultPassword::class => true,
+    Grnspc\Essentials\Configurables\SetDefaultPassword::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +151,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\ShouldBeStrict::class => true,
+    Grnspc\Essentials\Configurables\ShouldBeStrict::class => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -166,6 +166,6 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\Unguard::class => false,
+    Grnspc\Essentials\Configurables\Unguard::class => false,
 
 ];

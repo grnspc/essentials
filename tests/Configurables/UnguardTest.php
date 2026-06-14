@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\Unguard;
 use Illuminate\Database\Eloquent\Model;
-use NunoMaduro\Essentials\Configurables\Unguard;
 
 beforeEach(function (): void {
     Model::reguard();

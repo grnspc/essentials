@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\ShouldBeStrict;
 use Illuminate\Database\Eloquent\Model;
-use NunoMaduro\Essentials\Configurables\ShouldBeStrict;
 
 beforeEach(function (): void {
     Model::shouldBeStrict(false);

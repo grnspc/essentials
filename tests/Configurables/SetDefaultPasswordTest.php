@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\SetDefaultPassword;
 use Illuminate\Validation\Rules\Password;
-use NunoMaduro\Essentials\Configurables\SetDefaultPassword;
 
 beforeEach(function (): void {
     Password::defaults();
@@ -15,9 +15,7 @@ it('sets default password rules', function (): void {
 
     $passwordRules = Password::default()->appliedRules();
 
-    expect($passwordRules['min'])->toBe(12)
-        ->and($passwordRules['max'])->toBe(255)
-        ->and($passwordRules['uncompromised'])->toBeTrue();
+    expect($passwordRules['min'])->toBe(8);
 })->skip(fn (): bool => method_exists(Password::class, 'appliedRules') === false,
     'The appliedRules method is not available in this version of Laravel.');
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\ProhibitDestructiveCommands;
 use Illuminate\Database\Console\Migrations\FreshCommand;
 use Illuminate\Support\Facades\DB;
-use NunoMaduro\Essentials\Configurables\ProhibitDestructiveCommands;
 
 beforeEach(function (): void {
     DB::prohibitDestructiveCommands(false);

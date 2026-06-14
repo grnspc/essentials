@@ -4,17 +4,26 @@ declare(strict_types=1);
 
 namespace {{ namespace }};
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\DatabaseManager;
+use Throwable;
 
 final readonly class {{ class }}
 {
+
+    public function __construct(private DatabaseManager $database) {}
+
     /**
      * Execute the action.
+     *
+     * @throws Throwable
      */
     public function handle(): void
     {
-        DB::transaction(function (): void {
-            //
-        });
+        $this->database->transaction(
+            callback: function (): void => {
+                //
+            },
+            attempts: 3
+        );
     }
 }

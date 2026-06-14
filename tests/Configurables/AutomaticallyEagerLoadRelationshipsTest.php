@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\AutomaticallyEagerLoadRelationships;
 use Illuminate\Database\Eloquent\Model;
-use NunoMaduro\Essentials\Configurables\AutomaticallyEagerLoadRelationships;
 
 beforeEach()
     ->skip(fn (): bool => ! method_exists(Model::class, 'automaticallyEagerLoadRelationships'),
@@ -18,10 +18,10 @@ it('enables automatic eager loading', function (): void {
     expect(Model::isAutomaticallyEagerLoadingRelationships())->toBeTrue();
 });
 
-it('is enabled by default', function (): void {
+it('is disabled by default', function (): void {
     $eagerLoad = new AutomaticallyEagerLoadRelationships;
 
-    expect($eagerLoad->enabled())->toBeTrue();
+    expect($eagerLoad->enabled())->toBeFalse();
 });
 
 it('can be disabled via configuration', function (): void {
@@ -39,5 +39,5 @@ it('does nothing when automaticallyEagerLoadRelationships method does not exist'
     $eagerLoad->configure();
 
     // Enabled by default
-    expect($eagerLoad->enabled())->toBeTrue();
+    expect($eagerLoad->enabled())->toBeFalse();
 });

@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace NunoMaduro\Essentials\Configurables;
+namespace Grnspc\Essentials\Configurables;
 
+use Grnspc\Essentials\Contracts\Configurable;
+use Grnspc\Essentials\Rules\StrongPassword;
 use Illuminate\Validation\Rules\Password;
-use NunoMaduro\Essentials\Contracts\Configurable;
 
 final class SetDefaultPassword implements Configurable
 {
@@ -23,6 +24,10 @@ final class SetDefaultPassword implements Configurable
      */
     public function configure(): void
     {
-        Password::defaults(fn (): ?Password => app()->isProduction() ? Password::min(12)->letters()->mixedCase()->numbers()->symbols()->max(255)->uncompromised() : null);
+        Password::defaults(
+            callback: fn (): ?Password => app()->isProduction()
+                ? new Password(8)->rules([StrongPassword::class])
+                : null
+        );
     }
 }

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace NunoMaduro\Essentials\Configurables;
+namespace Grnspc\Essentials\Configurables;
 
+use Grnspc\Essentials\Contracts\Configurable;
 use Illuminate\Database\Eloquent\Model;
-use NunoMaduro\Essentials\Contracts\Configurable;
 
 final readonly class AutomaticallyEagerLoadRelationships implements Configurable
 {
@@ -18,7 +18,7 @@ final readonly class AutomaticallyEagerLoadRelationships implements Configurable
      */
     public function enabled(): bool
     {
-        return config()->boolean(sprintf('essentials.%s', self::class), true);
+        return config()->boolean(sprintf('essentials.%s', self::class), false);
     }
 
     /**

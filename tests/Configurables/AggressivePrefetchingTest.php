@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\AggressivePrefetching;
 use Illuminate\Support\Facades\Vite;
-use NunoMaduro\Essentials\Configurables\AggressivePrefetching;
 
 beforeEach(function (): void {
     Vite::usePrefetchStrategy(null);

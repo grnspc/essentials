@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NunoMaduro\Essentials\Commands;
+namespace Grnspc\Essentials\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;

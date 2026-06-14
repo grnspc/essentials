@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\PreventStrayRequests;
 use Illuminate\Support\Facades\Http;
-use NunoMaduro\Essentials\Configurables\PreventStrayRequests;
 
 beforeEach(function (): void {
     Http::preventStrayRequests(false);

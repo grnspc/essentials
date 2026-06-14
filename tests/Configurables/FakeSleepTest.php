@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\FakeSleep;
 use Illuminate\Support\Sleep;
-use NunoMaduro\Essentials\Configurables\FakeSleep;
 
 beforeEach(function (): void {
     Sleep::fake(false);

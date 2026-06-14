@@ -1,4 +1,4 @@
-<a href="https://nunomaduro.com/">
+<a href="https://grnspc.com/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="art/header-dark.png">
     <img alt="Logo for essentials" src="art/header-light.png">
@@ -8,11 +8,11 @@
 # Essentials
 
 <p>
-    <a href="https://github.com/nunomaduro/essentials/actions"><img src="https://github.com/nunomaduro/essentials/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
-    <a href="https://packagist.org/packages/nunomaduro/essentials"><img src="https://img.shields.io/packagist/dt/nunomaduro/essentials" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/nunomaduro/essentials"><img src="https://img.shields.io/packagist/v/nunomaduro/essentials" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/nunomaduro/essentials"><img src="https://img.shields.io/packagist/l/nunomaduro/essentials" alt="License"></a>
-    <a href="https://youtube.com/@nunomaduro?sub_confirmation=1"><img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UCO_hYZF2gb_CyG5sA7ArlGg?style=flat&label=youtube&color=brightgreen"></a>
+    <a href="https://github.com/grnspc/essentials/actions"><img src="https://github.com/grnspc/essentials/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://packagist.org/packages/grnspc/essentials"><img src="https://img.shields.io/packagist/dt/grnspc/essentials" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/grnspc/essentials"><img src="https://img.shields.io/packagist/v/grnspc/essentials" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/grnspc/essentials"><img src="https://img.shields.io/packagist/l/grnspc/essentials" alt="License"></a>
+    <a href="https://youtube.com/@grnspc?sub_confirmation=1"><img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UCO_hYZF2gb_CyG5sA7ArlGg?style=flat&label=youtube&color=brightgreen"></a>
 </p>
 
 Essentials provide **better defaults** for your Laravel applications including strict models, automatically eagerly loaded relationships, immutable dates, and more! 
@@ -26,7 +26,7 @@ Essentials provide **better defaults** for your Laravel applications including s
 ⚡️ Get started by requiring the package using [Composer](https://getcomposer.org):
 
 ```bash
-composer require nunomaduro/essentials
+composer require grnspc/essentials
 ```
 
 ## Features
@@ -208,8 +208,8 @@ All features are configurable through the `essentials.php` config file. By defau
 ```php
 // config/essentials.php
 return [
-    NunoMaduro\Essentials\Configurables\ShouldBeStrict::class => true,
-    NunoMaduro\Essentials\Configurables\Unguard::class => false,
+    Grnspc\Essentials\Configurables\ShouldBeStrict::class => true,
+    Grnspc\Essentials\Configurables\Unguard::class => false,
     // other configurables...
 ];
 ```
@@ -229,4 +229,4 @@ php artisan vendor:publish --tag=essentials-stubs
 
 ## License
 
-**Essentials** was created by **[Nuno Maduro](https://twitter.com/enunomaduro)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
+**Essentials** was created by **[Nuno Maduro](https://twitter.com/egrnspc)** under the **[MIT license](https://opensource.org/licenses/MIT)**.

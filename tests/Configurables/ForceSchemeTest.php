@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\ForceScheme;
 use Illuminate\Support\Facades\URL;
-use NunoMaduro\Essentials\Configurables\ForceScheme;
 
 beforeEach(function (): void {
     URL::forceScheme(null);
