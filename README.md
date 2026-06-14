@@ -1,10 +1,3 @@
-<a href="https://grnspc.com/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="art/header-dark.png">
-    <img alt="Logo for essentials" src="art/header-light.png">
-  </picture>
-</a>
-
 # Essentials
 
 <p>
@@ -12,7 +5,6 @@
     <a href="https://packagist.org/packages/grnspc/essentials"><img src="https://img.shields.io/packagist/dt/grnspc/essentials" alt="Total Downloads"></a>
     <a href="https://packagist.org/packages/grnspc/essentials"><img src="https://img.shields.io/packagist/v/grnspc/essentials" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/grnspc/essentials"><img src="https://img.shields.io/packagist/l/grnspc/essentials" alt="License"></a>
-    <a href="https://youtube.com/@grnspc?sub_confirmation=1"><img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UCO_hYZF2gb_CyG5sA7ArlGg?style=flat&label=youtube&color=brightgreen"></a>
 </p>
 
 Essentials provide **better defaults** for your Laravel applications including strict models, automatically eagerly loaded relationships, immutable dates, and more! 
@@ -147,16 +139,26 @@ declare(strict_types=1);
 
 namespace App\Actions;
 
+use Illuminate\Database\DatabaseManager;
+use Throwable;
+
 final readonly class CreateUserAction
 {
+     public function __construct(private DatabaseManager $database) {}
+
     /**
      * Execute the action.
+     *
+     * @throws Throwable
      */
     public function handle(): void
     {
-        DB::transaction(function (): void {
-            //
-        });
+        $this->database->transaction(
+            callback: function (): void => {
+                //
+            },
+            attempts: 3
+        );
     }
 }
 ```
@@ -229,4 +231,4 @@ php artisan vendor:publish --tag=essentials-stubs
 
 ## License
 
-**Essentials** was created by **[Nuno Maduro](https://twitter.com/egrnspc)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
+**Essentials** was created by **Grnspc** under the **[MIT license](https://opensource.org/licenses/MIT)**.
