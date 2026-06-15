@@ -15,17 +15,6 @@ jobs:
         php: ['8.5']
         laravel: ['^13.0']
         dependency-version: ['prefer-stable']
-        include:
-         - laravel: '^13.0'
-           testbench: '11.*'
-         - laravel: '^12.52.0'
-           testbench: '10.*'
-         - laravel: '^11.44.2'
-           testbench: '9.*'
-         - php: '8.3'
-           laravel: '^11.44.2'
-           testbench: '9.*'
-           dependency-version: 'prefer-highest'
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
