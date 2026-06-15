@@ -20,7 +20,7 @@ final readonly class {{ class }}
     public function handle(): void
     {
         $this->database->transaction(
-            callback: function (): void => {
+            callback: function (): void {
                 //
             },
             attempts: 3
