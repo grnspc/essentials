@@ -26,7 +26,7 @@ final class SetDefaultPassword implements Configurable
     {
         Password::defaults(
             callback: fn (): ?Password => app()->isProduction()
-                ? new Password(8)->rules([StrongPassword::class])
+                ? new Password(8)->rules([StrongPassword::class])->uncompromised()
                 : null
         );
     }

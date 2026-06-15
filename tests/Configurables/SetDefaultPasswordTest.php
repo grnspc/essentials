@@ -15,6 +15,8 @@ it('sets default password rules', function (): void {
 
     $passwordRules = Password::default()->appliedRules();
 
+    // dd($passwordRules);
+
     expect($passwordRules['min'])->toBe(8);
 })->skip(fn (): bool => method_exists(Password::class, 'appliedRules') === false,
     'The appliedRules method is not available in this version of Laravel.');
