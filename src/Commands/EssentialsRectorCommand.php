@@ -6,7 +6,6 @@ namespace Grnspc\Essentials\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Override;
 
 final class EssentialsRectorCommand extends Command
 {
@@ -15,7 +14,6 @@ final class EssentialsRectorCommand extends Command
      *
      * @var string
      */
-    #[Override]
     protected $signature = 'essentials:rector
         {--force : Force the operation to run without confirmation}
         {--backup : Create a backup of existing rector.php}';
@@ -25,7 +23,6 @@ final class EssentialsRectorCommand extends Command
      *
      * @var string
      */
-    #[Override]
     protected $description = 'This command will publish an opinionated Rector configuration file for your project.';
 
     /**
