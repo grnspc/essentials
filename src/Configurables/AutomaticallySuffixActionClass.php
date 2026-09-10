@@ -4,23 +4,4 @@ declare(strict_types=1);
 
 namespace Grnspc\Essentials\Configurables;
 
-use Grnspc\Essentials\Contracts\Configurable;
-
-final readonly class AutomaticallySuffixActionClass implements Configurable
-{
-    /**
-     * Whether the configurable is enabled or not.
-     */
-    public function enabled(): bool
-    {
-        return config()->boolean(sprintf('essentials.%s', self::class), true);
-    }
-
-    /**
-     * Run the configurable.
-     */
-    public function configure(): void
-    {
-        config()->set('essentials.action.suffix', config()->boolean(sprintf('essentials.%s', self::class), true));
-    }
-}
+final readonly class AutomaticallySuffixActionClass {}

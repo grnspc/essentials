@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Grnspc\Essentials\Configurables\AutomaticallySuffixActionClass;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
@@ -69,7 +70,7 @@ it('adds suffix "Action" to action name if enabled', function (string $actionNam
 ]);
 
 it('doesnt add or remove "Action" to action name if disabled', function (string $actionName, string $expectedName): void {
-    config()->set('essentials.action.suffix', false);
+    config()->set(sprintf('essentials.%s', AutomaticallySuffixActionClass::class), false);
     $exitCode = Artisan::call('make:action', ['name' => $actionName]);
 
     expect($exitCode)->toBe(0);

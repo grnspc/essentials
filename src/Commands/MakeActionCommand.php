@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Grnspc\Essentials\Commands;
 
+use Grnspc\Essentials\Configurables\AutomaticallySuffixActionClass;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
+use Override;
 
 final class MakeActionCommand extends GeneratorCommand
 {
@@ -15,6 +17,7 @@ final class MakeActionCommand extends GeneratorCommand
      *
      * @var string
      */
+    #[Override]
     protected $name = 'make:action';
 
     /**
@@ -22,6 +25,7 @@ final class MakeActionCommand extends GeneratorCommand
      *
      * @var string
      */
+    #[Override]
     protected $description = 'Create a new action class';
 
     /**
@@ -29,6 +33,7 @@ final class MakeActionCommand extends GeneratorCommand
      *
      * @var string
      */
+    #[Override]
     protected $type = 'Action';
 
     /**
@@ -59,7 +64,7 @@ final class MakeActionCommand extends GeneratorCommand
         return Str::of(mb_trim($name))
             ->replaceEnd('.php', '')
             ->when(
-                value: config('essentials.action.suffix', true),
+                value: config('essentials.'.AutomaticallySuffixActionClass::class, true),
                 callback: fn (Stringable $string) => $string->replaceEnd('Action', '')->append('Action'))
             ->toString();
     }
