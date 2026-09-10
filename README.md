@@ -168,10 +168,7 @@ Actions help organize business logic in dedicated classes, promoting single resp
 
 **config** `config/essentials.php`
 ```php
-// prevent suffixing the action name with "Action".
-'action' => [ 
-    'suffix' => false,
-],
+Grnspc\Essentials\Configurables\AutomaticallySuffixActionClass::class => false,
 ```
 
 

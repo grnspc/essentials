@@ -15,11 +15,23 @@ it('sets default password rules', function (): void {
 
     $passwordRules = Password::default()->appliedRules();
 
-    // dd($passwordRules);
+    expect($passwordRules)->toMatchArray([
+        'min' => 8,
+        'max' => null,
+        'mixedCase' => false,
+        'letters' => false,
+        'numbers' => false,
+        'symbols' => false,
+        'uncompromised' => true,
+        'compromisedThreshold' => 0,
+    ])
+        ->and($passwordRules['customRules'])
+        ->toContainOnlyInstancesOf(Grnspc\Essentials\Rules\StrongPassword::class);
 
-    expect($passwordRules['min'])->toBe(8);
-})->skip(fn (): bool => method_exists(Password::class, 'appliedRules') === false,
-    'The appliedRules method is not available in this version of Laravel.');
+})->skip(
+    conditionOrMessage: fn (): bool => method_exists(Password::class, 'appliedRules') === false,
+    message: 'The appliedRules method is not available in this version of Laravel.'
+);
 
 it('is enabled by default', function (): void {
     $setDefaultPassword = new SetDefaultPassword;

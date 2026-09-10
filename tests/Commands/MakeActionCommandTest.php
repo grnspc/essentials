@@ -48,7 +48,6 @@ it('fails when the action already exists', function (): void {
 });
 
 it('adds suffix "Action" to action name if enabled', function (string $actionName, string $expectedName): void {
-    config()->set('essentials.action.suffix', true);
     $exitCode = Artisan::call('make:action', ['name' => $actionName]);
 
     expect($exitCode)->toBe(0);

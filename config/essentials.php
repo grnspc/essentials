@@ -9,15 +9,13 @@ return [
     | Action Suffix
     |--------------------------------------------------------------------------
     |
-    | This option allows you to enable/disable auto suffixing your Action classes
+    | This option allows you to enable auto suffixing your Action classes
     | with "Action"
     |
     | Enabled by default.
     |
     */
-    'action' => [
-        'suffix' => true,
-    ],
+    Grnspc\Essentials\Configurables\AutomaticallySuffixActionClass::class => true,
 
     /*
     |--------------------------------------------------------------------------
