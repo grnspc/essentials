@@ -34,7 +34,7 @@ final class EssentialsRectorCommand extends Command
             return 0;
         }
 
-        $stub_path = __DIR__.'/../../stubs/rector.stub';
+        $stub_path = __DIR__.'/../../stubs/rector.php';
         $destination_path = base_path('rector.php');
 
         if (! File::exists($stub_path)) {

@@ -6,6 +6,7 @@ namespace Grnspc\Essentials\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
+use Illuminate\Support\Stringable;
 
 final class MakeActionCommand extends GeneratorCommand
 {
@@ -57,8 +58,9 @@ final class MakeActionCommand extends GeneratorCommand
 
         return Str::of(mb_trim($name))
             ->replaceEnd('.php', '')
-            ->replaceEnd('Action', '')
-            ->append('Action')
+            ->when(
+                value: config('essentials.action.suffix', true),
+                callback: fn (Stringable $string) => $string->replaceEnd('Action', '')->append('Action'))
             ->toString();
     }
 

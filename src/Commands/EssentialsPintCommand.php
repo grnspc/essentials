@@ -34,7 +34,7 @@ final class EssentialsPintCommand extends Command
             return 0;
         }
 
-        $stub_path = __DIR__.'/../../stubs/pint.stub';
+        $stub_path = __DIR__.'/../../stubs/pint.json';
         $destination_path = base_path('pint.json');
 
         if (! File::exists($stub_path)) {

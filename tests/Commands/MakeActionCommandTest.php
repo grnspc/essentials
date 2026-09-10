@@ -47,23 +47,48 @@ it('fails when the action already exists', function (): void {
     expect($exitCode)->toBe(1);
 });
 
-it('add suffix "Action" to action name if not provided', function (string $actionName): void {
+it('adds suffix "Action" to action name if enabled', function (string $actionName, string $expectedName): void {
+    config()->set('essentials.action.suffix', true);
     $exitCode = Artisan::call('make:action', ['name' => $actionName]);
 
     expect($exitCode)->toBe(0);
 
-    $expectedPath = app_path('Actions/CreateUserAction.php');
+    $expectedPath = app_path("Actions/{$expectedName}.php");
     expect(File::exists($expectedPath))->toBeTrue();
 
     $content = File::get($expectedPath);
 
     expect($content)
         ->toContain('namespace App\Actions;')
-        ->toContain('class CreateUserAction')
+        ->toContain("class {$expectedName}")
         ->toContain('public function handle(): void');
 })->with([
-    'CreateUser',
-    'CreateUser.php',
+    ['CreateUser', 'CreateUserAction'],
+    ['CreateUser.php', 'CreateUserAction'],
+    ['CreateUserAction', 'CreateUserAction'],
+    ['CreateUserAction.php', 'CreateUserAction'],
+]);
+
+it('doesnt add or remove "Action" to action name if disabled', function (string $actionName, string $expectedName): void {
+    config()->set('essentials.action.suffix', false);
+    $exitCode = Artisan::call('make:action', ['name' => $actionName]);
+
+    expect($exitCode)->toBe(0);
+
+    $expectedPath = app_path("Actions/{$expectedName}.php");
+    expect(File::exists($expectedPath))->toBeTrue();
+
+    $content = File::get($expectedPath);
+
+    expect($content)
+        ->toContain('namespace App\Actions;')
+        ->toContain("class {$expectedName}")
+        ->toContain('public function handle(): void');
+})->with([
+    ['CreateUser', 'CreateUser'],
+    ['CreateUser.php', 'CreateUser'],
+    ['CreateUserAction', 'CreateUserAction'],
+    ['CreateUserAction.php', 'CreateUserAction'],
 ]);
 
 it('uses published stub when available', function (): void {

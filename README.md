@@ -120,8 +120,9 @@ Configures Laravel Sleep Facade to be faked.
 
 **Why:** Avoid unexpected sleep during testing cases.
 
-### 🏗️ Artisan Commands
+---
 
+### 🏗️ Artisan Commands
 #### `make:action`
 
 Quickly generates action classes in your Laravel application:
@@ -164,6 +165,15 @@ final readonly class CreateUserAction
 ```
 
 Actions help organize business logic in dedicated classes, promoting single responsibility and cleaner controllers.
+
+**config** `config/essentials.php`
+```php
+// prevent suffixing the action name with "Action".
+'action' => [ 
+    'suffix' => false,
+],
+```
+
 
 #### `essentials:pint`
 
