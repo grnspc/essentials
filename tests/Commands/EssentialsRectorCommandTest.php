@@ -19,7 +19,7 @@ it('publishes rector configuration file without a backup by default', function (
         ->assertExitCode(0);
 
     expect(file_exists(base_path('rector.php')))->toBeTrue();
-    expect(file_exists(base_path('rector.json.backup')))->toBeFalse();
+    expect(file_exists(base_path('rector.php.backup')))->toBeFalse();
 });
 
 it('returns error when rector configuration file does not exist', function (): void {
