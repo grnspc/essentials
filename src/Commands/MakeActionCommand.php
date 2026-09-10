@@ -8,7 +8,6 @@ use Grnspc\Essentials\Configurables\AutomaticallySuffixActionClass;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
-use Override;
 
 final class MakeActionCommand extends GeneratorCommand
 {
@@ -17,7 +16,6 @@ final class MakeActionCommand extends GeneratorCommand
      *
      * @var string
      */
-    #[Override]
     protected $name = 'make:action';
 
     /**
@@ -25,7 +23,6 @@ final class MakeActionCommand extends GeneratorCommand
      *
      * @var string
      */
-    #[Override]
     protected $description = 'Create a new action class';
 
     /**
@@ -33,7 +30,6 @@ final class MakeActionCommand extends GeneratorCommand
      *
      * @var string
      */
-    #[Override]
     protected $type = 'Action';
 
     /**
